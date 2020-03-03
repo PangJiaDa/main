@@ -2,6 +2,10 @@ package seedu.address.model.person;
 
 import static java.util.Objects.requireNonNull;
 
+/**
+ * Represents a Person's Remark in the address book.
+ * There is no invalid remark.
+ */
 public class Remark {
     public final String value;
 

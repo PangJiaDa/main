@@ -11,6 +11,9 @@ import seedu.address.model.Model;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Remark;
 
+/**
+ * Changes the remark of an existing person in the address book.
+ */
 public class RemarkCommand extends Command {
     public static final String COMMAND_WORD = "remark";
     public static final String MESSAGE_NOT_IMPLEMENTED_YET = "Remark command not implemented yet";
@@ -49,16 +52,15 @@ public class RemarkCommand extends Command {
 
         Person personToEdit = lastShownList.get(index.getZeroBased());
         Person editedPerson = new Person(
-          personToEdit.getName(),
-          personToEdit.getPhone(),    
-          personToEdit.getEmail(),
-          personToEdit.getTags(),
-          personToEdit.getRemark()
-        );
-        
+                personToEdit.getName(),
+                personToEdit.getPhone(),
+                personToEdit.getEmail(),
+                personToEdit.getTags(),
+                personToEdit.getRemark());
+
         model.setPerson(personToEdit, editedPerson);
         model.updateFilteredPersonList(Model.PREDICATE_SHOW_ALL_PERSONS);
-        
+
         return new CommandResult(generateSuccessMessage(editedPerson));
     }
 
